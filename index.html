@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Vladyslav Tkachov — video editor and AI creator making YouTube Shorts, AI dramas, UGC and long-form video.">
+  <title>Vladyslav Tkachov — Video Editor &amp; AI Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#10110f;--panel:#181a17;--ink:#f1f1e9;--muted:#a5a99c;--line:#33372f;--lime:#d3ff55;--orange:#ff724e;--max:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:var(--lime);color:#10110f}
+    .wrap{width:min(var(--max),calc(100% - 56px));margin:auto}.mono,.eyebrow,.nav a,.meta,.tag,.index,.footer-note{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.09em}.eyebrow{font-size:11px;color:var(--lime);display:flex;gap:10px;align-items:center}.eyebrow:before{content:"";width:22px;height:1px;background:currentColor}
+    header{height:78px;display:flex;align-items:center;border-bottom:1px solid #ffffff12}.nav{display:flex;justify-content:space-between;align-items:center}.brand{font-size:14px;font-weight:800;letter-spacing:-.04em}.brand span{color:var(--lime)}.navlinks{display:flex;gap:30px}.nav a{font-size:10px;color:#c7c9c0;transition:color .2s}.nav a:hover{color:var(--lime)}.nav .contact-link{border:1px solid var(--line);border-radius:99px;padding:11px 17px;color:var(--ink)}
+    .hero{min-height:610px;display:grid;grid-template-columns:1.12fr .88fr;gap:5%;align-items:center;padding:76px 0 72px}.hero h1{font-size:clamp(54px,8.6vw,112px);line-height:.91;letter-spacing:-.09em;margin:22px 0 24px;max-width:760px}.hero h1 em{font-style:normal;color:var(--lime)}.hero-copy{max-width:490px;font-size:16px;line-height:1.75;color:#b8bbb1}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-flex;align-items:center;gap:12px;padding:14px 18px;border-radius:3px;font-size:12px;font-weight:800;background:var(--lime);color:#12140f}.button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.arrow{font-size:17px;line-height:0}.hero-art{position:relative;min-height:420px;background:#22251e;border:1px solid var(--line);overflow:hidden;isolation:isolate}.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,#cfff4a 0%,#a9cd44 31%,#f36d4b 32%,#292b25 33%,#181a17 70%);opacity:.85;clip-path:polygon(0 0,100% 0,100% 73%,0 100%);z-index:-1}.hero-art:after{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:-40px;top:76px;background:radial-gradient(circle at 35% 30%,#ffd1a1 0 7%,#eb7b55 38%,#8b3f35 70%,#222 100%);box-shadow:0 30px 90px #0008;z-index:-1}.art-label{position:absolute;top:20px;left:20px;color:#161812;font:11px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}.art-play{position:absolute;right:35px;top:178px;width:64px;height:64px;border:1px solid #f1f1e988;border-radius:50%;display:grid;place-items:center;background:#1118;backdrop-filter:blur(8px);font-size:20px}.art-caption{position:absolute;left:24px;bottom:24px;font-size:22px;font-weight:800;letter-spacing:-.05em}.art-caption small{display:block;margin-top:8px;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.12em;color:#d8dbce}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;color:var(--muted);font:10px "DM Mono",monospace;letter-spacing:.11em;text-transform:uppercase;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.ticker strong{color:var(--lime);font-weight:400}
+    section{padding:106px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}.section-head h2{font-size:clamp(36px,5.4vw,64px);letter-spacing:-.075em;line-height:.98;margin:13px 0 0}.section-head p{max-width:340px;color:var(--muted);font-size:13px;line-height:1.7;margin:0}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{background:var(--panel);border:1px solid var(--line);min-width:0}.video{position:relative;aspect-ratio:16/9;background:#23251f;overflow:hidden}.video img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78);transition:transform .5s,filter .4s}.project:hover .video img{transform:scale(1.035);filter:saturate(1)}.play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(0deg,#0005,transparent 55%);cursor:pointer;color:#fff}.play span{width:58px;height:58px;border:1px solid #fff9;border-radius:50%;display:grid;place-items:center;background:#0b0d0b55;backdrop-filter:blur(5px);font-size:18px;transition:transform .2s,background .2s}.play:hover span{transform:scale(1.08);background:#d3ff55;color:#111}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.project-info{padding:17px 19px 20px;display:flex;align-items:start;justify-content:space-between;gap:16px}.project-info h3{font-size:16px;margin:0 0 6px;letter-spacing:-.04em}.project-info p{font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0}.index{font-size:10px;color:var(--lime)}.subhead{display:flex;align-items:center;gap:14px;margin:50px 0 18px}.subhead h3{margin:0;font-size:21px;letter-spacing:-.05em}.subhead span{font:10px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.shorts{grid-template-columns:repeat(3,1fr)}.shorts .video{aspect-ratio:9/12}.shorts .video img{object-fit:cover}.shorts .project-info{padding:15px}
+    .longform{padding-top:10px}.long-card{display:grid;grid-template-columns:1.2fr .8fr;border:1px solid var(--line);background:var(--panel)}.long-card .video{aspect-ratio:16/10}.long-copy{padding:clamp(24px,4vw,52px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.long-copy h3{font-size:clamp(28px,4vw,48px);letter-spacing:-.07em;line-height:1;margin:16px 0}.long-copy p{color:var(--muted);font-size:13px;line-height:1.7;max-width:360px;margin:0 0 25px}.text-link{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:800;border-bottom:1px solid var(--lime);padding-bottom:8px;color:var(--lime)}.drive-note{margin-top:24px;color:var(--muted);font-size:11px;line-height:1.6}
+    .about{background:#d3ff55;color:#171912;padding:86px 0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%}.about h2{font-size:clamp(40px,6vw,72px);line-height:.95;letter-spacing:-.08em;margin:16px 0}.about .eyebrow{color:#393f2b}.about .eyebrow:before{background:currentColor}.about-copy{font-size:15px;line-height:1.85;max-width:520px}.about-copy p{margin:0 0 18px}.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 34px;margin-top:28px}.tool-group{border-top:1px solid #17191244;padding-top:12px}.tool-group h3{font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px;color:#484d3b}.tool-group p{font-size:13px;font-weight:700;line-height:1.7;margin:0}
+    .contact{padding:105px 0 90px}.contact-panel{border:1px solid var(--line);padding:clamp(28px,6vw,70px);display:flex;justify-content:space-between;align-items:end;gap:30px;background:linear-gradient(125deg,#191b16,#121310)}.contact h2{font-size:clamp(40px,7vw,82px);letter-spacing:-.08em;line-height:.93;margin:16px 0 15px;max-width:690px}.contact p{color:var(--muted);font-size:14px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.footer{border-top:1px solid var(--line);padding:23px 0 30px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.footer-note{font-size:9px}
+    @media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 36px))}.hero{grid-template-columns:1fr;padding:66px 0 52px;gap:34px}.hero-art{min-height:340px}.hero-art:after{width:260px;height:260px;right:0;top:50px}.navlinks{gap:15px}.navlinks a:nth-child(2){display:none}.section-head{align-items:start;flex-direction:column}.shorts{grid-template-columns:repeat(2,1fr)}.long-card{grid-template-columns:1fr}.long-card .video{aspect-ratio:16/9}.about-grid{grid-template-columns:1fr;gap:22px}.contact-panel{align-items:flex-start;flex-direction:column}.contact-actions{justify-content:flex-start}}
+    @media(max-width:480px){.wrap{width:calc(100% - 28px)}header{height:68px}.brand{font-size:12px}.navlinks{gap:11px}.navlinks a{font-size:9px}.nav .contact-link{padding:9px 11px}.hero h1{font-size:56px}.hero-art{min-height:290px}.hero-art:after{width:220px;height:220px;top:40px}.ticker{justify-content:flex-start;gap:12px 22px}.ticker span{font-size:9px}.project-grid,.shorts{grid-template-columns:1fr}.shorts .video{aspect-ratio:16/10}.subhead{margin-top:34px}.shorts .project-info{padding:17px 19px 20px}.tools{gap:20px 15px}.contact{padding:76px 0 55px}.footer{gap:12px;align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">VT<span>—</span> EDITOR / AI CREATOR</a>
+      <nav class="navlinks" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#toolkit">Toolkit</a><a class="contact-link" href="#contact">Let’s talk <span class="arrow">↗</span></a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Video editor · AI creator · Odesa, Ukraine</div>
+        <h1>Stories built<br>to stop the <em>scroll.</em></h1>
+        <p class="hero-copy">I shape short-form videos, AI-powered stories and UGC into clear, fast-moving edits for audiences around the world.</p>
+        <div class="hero-actions"><a class="button" href="#work">Explore selected work <span class="arrow">↓</span></a><a class="button ghost" href="mailto:hackerkhg@gmail.com">Contact me <span class="arrow">↗</span></a></div>
+      </div>
+      <div class="hero-art" aria-label="Abstract cover art for video editing portfolio">
+        <span class="art-label">Selected work · 2025—26</span><span class="art-play" aria-hidden="true">▶</span>
+        <div class="art-caption">Made to move.<small>Cut · sound · story</small></div>
+      </div>
+    </div>
+    <div class="ticker wrap"><span><strong>100M+ views</strong> on select Shorts</span><span>AI storytelling</span><span>UGC creatives</span><span>Long-form edits</span><span>English · Ukrainian · Russian</span></div>
+    <section id="work" class="wrap">
+      <div class="section-head"><div><div class="eyebrow">The work</div><h2>Watch it in motion.</h2></div><p>Shorts, dialogue-free AI dramas and a long-form compilation. Tap any frame to play.</p></div>
+      <div class="subhead"><h3>Dialogue-free AI dramas</h3><span>Story-first · AI-assisted</span></div>
+      <div class="project-grid">
+        <article class="project"><div class="video" data-video="CqIJJ4Rd0jQ"><img src="https://img.youtube.com/vi/CqIJJ4Rd0jQ/hqdefault.jpg" alt="AI drama video thumbnail" loading="lazy"><button class="play" aria-label="Play AI drama 01"><span>▶</span></button></div><div class="project-info"><div><h3>Drama 01</h3><p>AI drama · video edit</p></div><span class="index">01</span></div></article>
+        <article class="project"><div class="video" data-video="EB8ao_NrfXM"><img src="https://img.youtube.com/vi/EB8ao_NrfXM/hqdefault.jpg" alt="AI drama video thumbnail" loading="lazy"><button class="play" aria-label="Play AI drama 02"><span>▶</span></button></div><div class="project-info"><div><h3>Drama 02</h3><p>AI drama · video edit</p></div><span class="index">02</span></div></article>
+      </div>
+      <div class="subhead"><h3>YouTube Shorts</h3><span>Editing · sound · final assembly</span></div>
+      <div class="project-grid shorts">
+        <article class="project"><div class="video" data-video="Tqn7ML9gMug"><img src="https://img.youtube.com/vi/Tqn7ML9gMug/hqdefault.jpg" alt="YouTube Short 01 thumbnail" loading="lazy"><button class="play" aria-label="Play YouTube Short 01"><span>▶</span></button></div><div class="project-info"><div><h3>Short 01</h3><p>YouTube Short</p></div><span class="index">01</span></div></article>
+        <article class="project"><div class="video" data-video="c7Kn-jlmAzY"><img src="https://img.youtube.com/vi/c7Kn-jlmAzY/hqdefault.jpg" alt="YouTube Short 02 thumbnail" loading="lazy"><button class="play" aria-label="Play YouTube Short 02"><span>▶</span></button></div><div class="project-info"><div><h3>Short 02</h3><p>YouTube Short</p></div><span class="index">02</span></div></article>
+        <article class="project"><div class="video" data-video="Yh-HTpTNWX4"><img src="https://img.youtube.com/vi/Yh-HTpTNWX4/hqdefault.jpg" alt="YouTube Short 03 thumbnail" loading="lazy"><button class="play" aria-label="Play YouTube Short 03"><span>▶</span></button></div><div class="project-info"><div><h3>Short 03</h3><p>YouTube Short</p></div><span class="index">03</span></div></article>
+        <article class="project"><div class="video" data-video="mTAcUdgOm7A"><img src="https://img.youtube.com/vi/mTAcUdgOm7A/hqdefault.jpg" alt="YouTube Short 04 thumbnail" loading="lazy"><button class="play" aria-label="Play YouTube Short 04"><span>▶</span></button></div><div class="project-info"><div><h3>Short 04</h3><p>YouTube Short</p></div><span class="index">04</span></div></article>
+        <article class="project"><div class="video" data-video="9cw8D0rqDIQ"><img src="https://img.youtube.com/vi/9cw8D0rqDIQ/hqdefault.jpg" alt="YouTube Short 05 thumbnail" loading="lazy"><button class="play" aria-label="Play YouTube Short 05"><span>▶</span></button></div><div class="project-info"><div><h3>Short 05</h3><p>YouTube Short</p></div><span class="index">05</span></div></article>
+      </div>
+      <div class="subhead"><h3>Video editing</h3><span>Additional selected edit</span></div>
+      <div class="project-grid">
+        <article class="project"><div class="video drive-video"><iframe src="https://drive.google.com/file/d/1jvooauoSLZM3hdX6zAf1UwxDOENohPBB/preview" title="Video editing work sample" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div><div class="project-info"><div><h3>Video edit · Work sample</h3><p>Google Drive video</p></div><a class="index" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1jvooauoSLZM3hdX6zAf1UwxDOENohPBB/view?usp=drive_link" aria-label="Open video edit in Google Drive">↗</a></div></article>
+      </div>
+    </section>
+    <section class="wrap longform">
+      <div class="section-head"><div><div class="eyebrow">Long-form project</div><h2>A story with room to breathe.</h2></div><p>A YouTube Shorts compilation about acts of kindness, edited with voice-over narration.</p></div>
+      <article class="long-card"><div class="video" data-video="dJz7R0kbdT8"><img src="https://img.youtube.com/vi/dJz7R0kbdT8/hqdefault.jpg" alt="Acts of kindness video compilation thumbnail" loading="lazy"><button class="play" aria-label="Play acts of kindness compilation"><span>▶</span></button></div><div class="long-copy"><div class="eyebrow">Compilation · voice-over</div><h3>Acts of kindness</h3><p>A long-form compilation shaped from short stories, with voice-over narration and a steady emotional throughline.</p><a class="text-link" href="https://www.youtube.com/watch?v=dJz7R0kbdT8" target="_blank" rel="noopener">Watch on YouTube <span class="arrow">↗</span></a></div></article>
+    </section>
+    <section id="about" class="about">
+      <div class="wrap about-grid">
+        <div><div class="eyebrow">A little about me</div><h2>Creative instinct.<br>Practical craft.</h2></div>
+        <div class="about-copy"><p>I’m a video editor and AI creator based in Odesa, Ukraine. I turn scripts and raw footage into concise, watchable stories — from AI-generated scenes and dialogue-free dramas to UGC ads, Shorts and longer compilations.</p><p>At VIRUM Production, I created Shorts from scripts and helped teammates build practical skills with AI tools and editing workflows. At Fabiosa Media, I edited source footage, created UGC creatives and adapted Reels for social platforms.</p><p>Some Shorts I worked on passed 100 million views; one edited Reel also crossed 100 million views.</p>
+          <div id="toolkit" class="tools">
+            <div class="tool-group"><h3>Editing</h3><p>Premiere Pro<br>CapCut · After Effects</p></div>
+            <div class="tool-group"><h3>AI video</h3><p>Kling · Runway · Higgsfield<br>Pika · Luma · Hailuo</p></div>
+            <div class="tool-group"><h3>Image &amp; audio</h3><p>Midjourney · Flux · Leonardo<br>OpenArt · ElevenLabs</p></div>
+            <div class="tool-group"><h3>Languages</h3><p>Ukrainian · Russian<br>English (B1)</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="wrap contact">
+      <div class="contact-panel"><div><div class="eyebrow">Have a story to tell?</div><h2>Let’s make the next one impossible to skip.</h2><p>Available for video editing and AI creator projects.</p></div><div class="contact-actions"><a class="button" href="mailto:hackerkhg@gmail.com">Email me <span class="arrow">↗</span></a><a class="button ghost" href="https://www.linkedin.com/in/vladyslav-tkachov-5b182a364/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a></div></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#top">VT<span>—</span></a><span class="footer-note">Vladyslav Tkachov · Odesa, Ukraine</span><span>© <span id="year"></span></span></footer>
+  <script>
+    document.querySelectorAll('.video[data-video]').forEach((box)=>{
+      const button=box.querySelector('button');
+      button.addEventListener('click',()=>{
+        const id=box.dataset.video;
+        const frame=document.createElement('iframe');
+        frame.src=`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+        frame.title=button.getAttribute('aria-label');
+        frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.allowFullscreen=true;
+        box.replaceChildren(frame);
+      });
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
