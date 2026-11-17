@@ -6,7 +6,7 @@ A responsive portfolio showcasing YouTube Shorts, dialogue-free AI dramas, long-
 
 ## Portfolio contents
 
-- Two dialogue-free AI dramas and five YouTube Shorts linked from the resume
+- One dialogue-free AI drama and five YouTube Shorts linked from the resume
 - Long-form compilation: “Acts of kindness”
 - Google Drive video-editing sample
 - Experience, tools, languages, and contact links
