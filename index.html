@@ -23,6 +23,7 @@
     @media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 36px))}.hero{grid-template-columns:1fr;padding:66px 0 52px;gap:34px}.hero-art{min-height:0}.navlinks{gap:15px}.navlinks a:nth-child(2){display:none}.section-head{align-items:start;flex-direction:column}.shorts{grid-template-columns:repeat(2,1fr)}.long-card{grid-template-columns:1fr}.long-card .video{aspect-ratio:16/9}.about-grid{grid-template-columns:1fr;gap:22px}.contact-panel{align-items:flex-start;flex-direction:column}.contact-actions{justify-content:flex-start}}
     @media(max-width:480px){.wrap{width:calc(100% - 28px)}header{height:68px}.brand{font-size:12px}.navlinks{gap:11px}.navlinks a{font-size:9px}.nav .contact-link{padding:9px 11px}.hero h1{font-size:56px}.hero-art{min-height:0}.ticker{justify-content:flex-start;gap:12px 22px}.ticker span{font-size:9px}.project-grid,.shorts{grid-template-columns:1fr}.shorts .video{aspect-ratio:16/10}.subhead{margin-top:34px}.shorts .project-info{padding:17px 19px 20px}.tools{gap:20px 15px}.contact{padding:76px 0 55px}.footer{gap:12px;align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .ai-ads .video{aspect-ratio:9/16}.ai-ads .video img{filter:none;object-fit:contain}.ai-ads .video video{object-fit:contain}.ai-ads .play:disabled{cursor:progress}.video-status:not(:empty){position:absolute;bottom:0;left:0;right:0;padding:12px;background:#10110fdb;color:#f1f1e9;text-align:center;font-size:12px;pointer-events:none}
   </style>
 </head>
 <body>
@@ -47,7 +48,18 @@
     </div>
     <div class="ticker wrap"><span><strong>100M+ views</strong> on select Shorts</span><span>AI storytelling</span><span>UGC creatives</span><span>Long-form edits</span><span>English · Ukrainian · Russian</span></div>
     <section id="work" class="wrap">
-      <div class="section-head"><div><div class="eyebrow">The work</div><h2>Watch it in motion.</h2></div><p>Shorts, a dialogue-free AI drama and a long-form compilation. Tap any frame to play.</p></div>
+      <div class="section-head"><div><div class="eyebrow">The work</div><h2>Watch it in motion.</h2></div><p>AI ads, Shorts, a dialogue-free AI drama and a long-form compilation. Tap any frame to play.</p></div>
+      <div class="subhead"><h3>AI Advertising</h3><span>AI-generated creative · video editing</span></div>
+      <div class="project-grid shorts ai-ads">
+        <article class="project">
+          <div class="video" data-public-video="assets/casino-01.bin assets/casino-02.bin" data-video-size="17241949">
+            <img src="assets/casino-poster.jpg" alt="Novara Casino AI advertisement" loading="lazy">
+            <button class="play" aria-label="Play Novara Casino AI advertisement"><span>▶</span></button>
+            <div class="video-status" role="status"></div>
+          </div>
+          <div class="project-info"><div><h3>Novara Casino</h3><p>AI advertising · video edit</p></div><span class="index">01</span></div>
+        </article>
+      </div>
       <div class="subhead"><h3>Dialogue-free AI drama</h3><span>Story-first · AI-assisted</span></div>
       <div class="project-grid">
         <article class="project"><div class="video" data-video="CqIJJ4Rd0jQ"><img src="https://img.youtube.com/vi/CqIJJ4Rd0jQ/hqdefault.jpg" alt="AI drama video thumbnail" loading="lazy"><button class="play" aria-label="Play AI drama 01"><span>▶</span></button></div><div class="project-info"><div><h3>Drama 01</h3><p>AI drama · video edit</p></div><span class="index">01</span></div></article>
@@ -99,6 +111,36 @@
         frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
         frame.allowFullscreen=true;
         box.replaceChildren(frame);
+      });
+    });
+    document.querySelectorAll('.video[data-public-video]').forEach((box)=>{
+      const button=box.querySelector('button');
+      const status=box.querySelector('.video-status');
+      button.addEventListener('click',async()=>{
+        button.disabled=true;
+        button.querySelector('span').textContent='…';
+        status.textContent='Loading video…';
+        try{
+          const parts=await Promise.all(box.dataset.publicVideo.split(' ').map(async(path)=>{
+            const response=await fetch(path);
+            if(!response.ok) throw new Error('Video unavailable');
+            return response.arrayBuffer();
+          }));
+          if(parts.reduce((sum,part)=>sum+part.byteLength,0)!==Number(box.dataset.videoSize)) throw new Error('Incomplete video');
+          const player=document.createElement('video');
+          player.controls=true;
+          player.playsInline=true;
+          player.preload='auto';
+          player.poster=box.querySelector('img').src;
+          player.setAttribute('aria-label','Novara Casino AI advertisement');
+          player.src=URL.createObjectURL(new Blob(parts,{type:'video/mp4'}));
+          box.replaceChildren(player);
+          player.play().catch(()=>{});
+        }catch(error){
+          status.textContent='Could not load video. Tap to retry.';
+          button.querySelector('span').textContent='↻';
+          button.disabled=false;
+        }
       });
     });
     document.getElementById('year').textContent=new Date().getFullYear();
